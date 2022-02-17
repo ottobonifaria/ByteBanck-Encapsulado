@@ -4,6 +4,12 @@ public class Conta {
      private int numero;
      private Cliente titular;
 
+     public Conta(int agencia, int numero) {
+          this.agencia = agencia;
+          this.numero = numero;
+          System.out.println("Criando uma conta : Agencia:" + this.agencia + " Numero: "+ this.numero);
+
+     }
 
      public void deposita(double valor){
           this.saldo += valor;
@@ -30,14 +36,23 @@ public class Conta {
           return this.numero;
      }
      public void setNumero(int numero){
+          if(numero<=0){
+               System.out.println("Não pode numero negativo");
+               return;
+          }
           this.numero = numero;
      }
 
      public int getAgencia() {
+
           return this.agencia;
      }
 
      public void setAgencia(int agencia) {
+          if(agencia <=0){
+               System.out.println("Não pode valor menor ou igual a 0");
+               return;
+          }
           this.agencia = agencia;
      }
 
